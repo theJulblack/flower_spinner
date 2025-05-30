@@ -9,6 +9,10 @@ body {
   font-family: "Playfair Display", serif;
   color: #1a1896;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
 h1 {
@@ -64,8 +68,8 @@ h1 {
 }
 
 button#spin {
-  margin-top: 30%;
-  margin: 22% 28%;
+  margin-top: 80vh;
+  /* margin: 22% auto; */
   padding: 15px 40px;
   background: #ED6815;
   color: #fff;
@@ -139,3 +143,21 @@ button#spin {
   50%  { transform: rotate(5deg); }
   100% { transform: rotate(0deg); }
 }
+
+@media (max-width: 600px) {
+   h1 {
+     font-size: 40px;
+     margin-bottom: 150px;
+   }
+   button#spin {
+  margin-top: 28vh;}
+ }
+
+ @media (max-height: 778px) and (max-width: 490px) {
+   h1 {
+     font-size: 40px;
+     margin-bottom: 150px;
+   }
+   button#spin {
+  margin-top: 35vh;}
+ }
