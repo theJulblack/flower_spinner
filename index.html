@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+  </style>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Цветочное колесо</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ДАВАЙ УЗНАЕМ,<br>КАКИЕ ЦВЕТЫ<br>ТЫ МНЕ ПОДАРИШЬ...</h1>
+
+  <button id="spin">Крутить</button>
+
+  <div class="wheel-container">
+    <div class="pointer">
+      <img class="pointerImg" src="./img/pointer.png" alt="">
+    </div>
+    <div class="wheel" id="wheel">
+      <div class="sector" style="--i:0;">с клумбы</div>
+      <div class="sector" style="--i:1;">пионы</div>
+      <div class="sector" style="--i:2;">розы</div>
+      <div class="sector" style="--i:3;">нарциссы</div>
+      <div class="sector" style="--i:4;">тюльпаны</div>
+      <div class="sector" style="--i:5;">гортензии</div>
+      <div class="sector" style="--i:6;">лилии</div>
+      <div class="sector" style="--i:7;">эустомы</div>
+    </div>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <p id="modalText"></p>
+      <br />
+      <img class="modalImg" id="modalImg" src="" alt="" style="width: 300px; height: 300px;">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+html, body {
+  overflow: hidden;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 20px;
+  background: #f1efff;
+  font-family: "Playfair Display", serif;
+  color: #1a1896;
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.wheel-container {
+  position: relative;
+  display: inline-block;
+}
+
+.wheel {
+  position: relative;
+  width: 1000px;
+  height: 1000px;
+  border: 10px solid #1a1896;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 3s linear;
+  font-size: 50px;
+}
+
+.sector {
+  --n: 8;
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 50%; height: 51%;
+  transform-origin: 0% 0%;
+  transform: rotate(calc(360deg / var(--n) * var(--i))) translate(0, -100%);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  background: #fff;
+  border: 5px solid #1a1896;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 6px;
+  box-sizing: border-box;
+  font-weight: bold;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.pointer {
+  position: absolute;
+  top: -20px; left: 47%;
+  z-index: 10;
+}
+
+.pointerImg{
+  height: 70px;
+}
+
+button#spin {
+  margin-top: 30%;
+  margin: 22% 28%;
+  padding: 15px 40px;
+  background: #ED6815;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 32px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+}
+
+.result {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 9999;
+}
+
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  max-width: 90%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  position: relative;
+  border: 5px solid #1a1896;
+  transform: translateY(-20px) scale(0.9);
+  transition: transform 0.4s ease;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0) scale(1);
+}
+
+.close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+
+.modalImg{
+  border-radius: 25px;
+}
+
+
+@keyframes tick {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
